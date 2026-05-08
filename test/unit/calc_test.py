@@ -6,15 +6,13 @@ from app.calc import Calculator
 
 @pytest.mark.unit
 class TestCalculate(unittest.TestCase):
+# Línea 9: El def comienza en un nivel (por ejemplo, alineado con otros test)
     def test_divide_by_zero_logic(self):
-    """
-    Test para cubrir la línea 24 de calc.py y alcanzar el 100% de cobertura.
-    """
-    # Verificamos que el código lanza la excepción TypeError
-    self.assertRaises(TypeError, self.calc.divide, 10, 0)
-        
-    def setUp(self):
-        self.calc = Calculator()
+        """
+        Test para cubrir la línea 24 de calc.py (TypeError).
+        """
+        # Estas líneas DEBEN tener 4 espacios más que el 'def'
+        self.assertRaises(TypeError, self.calc.divide, 10, 0)
 
     def test_add_method_returns_correct_result(self):
         self.assertEqual(4, self.calc.add(2, 2))
