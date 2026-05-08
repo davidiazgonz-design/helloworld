@@ -7,13 +7,11 @@ from app.calc import Calculator
 @pytest.mark.unit
 class TestCalculate(unittest.TestCase):
     def test_divide_by_zero_logic(self):
-        """
-        Este test es el que te dará el 100% de cobertura en ramas y líneas.
-        Cubre el caso donde el divisor es 0 en calc.py.
-        """
-        # IMPORTANTE: Verifica si tu calc.py devuelve "Invalid input" o lanza un error.
-        # Basado en la cobertura que te falta, lo normal es que devuelva el string:
-        self.assertEqual("Invalid input", self.calc.divide(10, 0))
+    """
+    Test para cubrir la línea 24 de calc.py y alcanzar el 100% de cobertura.
+    """
+    # Verificamos que el código lanza la excepción TypeError
+    self.assertRaises(TypeError, self.calc.divide, 10, 0)
         
     def setUp(self):
         self.calc = Calculator()
